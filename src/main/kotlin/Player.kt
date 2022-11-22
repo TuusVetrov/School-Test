@@ -6,16 +6,17 @@ class Player(name:String = "",
 {
     private var amountOfHeal = 3
 
-    fun useHeal() {
-        if (_healthPoint < _maxHealthPoint / 2)
-            println("No need for treatment")
+    fun useHeal(): String {
+        if (_healthPoint > _maxHealthPoint / 2)
+            return "No need for treatment"
 
         if (amountOfHeal > 0) {
             amountOfHeal--
             _healthPoint += _maxHealthPoint / 2
+
+            return "You used heal. Now your HP = $_healthPoint"
         }
-        else {
-            println("You no longer have heals")
-        }
+
+        return  "You no longer have heals"
     }
 }

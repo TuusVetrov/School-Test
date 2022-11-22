@@ -29,7 +29,7 @@ object Game {
 
         fun processBattleCommand() = when(command.lowercase()) {
             "attack" -> attack()
-            "heal" -> useHeal()
+            "heal" -> player.useHeal()
             else -> "Unknown command"
         }
     }
@@ -79,11 +79,6 @@ object Game {
         }
 
         return "The fight goes on"
-    }
-
-    private fun useHeal(): String {
-        player.useHeal()
-        return "You used heal. Now your HP = ${player._healthPoint}"
     }
 
     private fun printAllEnemysStats(): String {

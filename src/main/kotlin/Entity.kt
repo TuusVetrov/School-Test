@@ -19,8 +19,8 @@ abstract class Entity()
                 throw IllegalArgumentException("Protection value must be between 1 and 20")
         }
 
-    var _healthPoint = 0
-        protected set(value) {
+    protected var _healthPoint = 0
+        set(value) {
             if (value >= 0)
                 field = value
             else
